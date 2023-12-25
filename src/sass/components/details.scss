@@ -1,0 +1,54 @@
+.details {
+    background-color: transparent;
+
+    &__list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+
+    &__item {
+        background-color: $color-dark-blue;
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        font-size: 1.5rem;
+
+
+
+
+
+        // width: 20rem;
+
+        &-info {
+            padding: $gap-medium;
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            justify-content: space-between;
+            grid-row-gap: .8rem;
+        }
+
+        &-action {
+            margin-bottom: 1rem;
+        }
+
+        &-hours {
+            grid-column: 1 / -1;
+            font-size: 5rem;
+            font-weight: 300;
+        }
+
+        &-last {
+            font-size: 1.3rem;
+            color: $color-pale-blue;
+        }
+
+        &-bg {
+            background-color: $color-work;
+        }
+
+        &-img {
+
+        }
+    }
+}

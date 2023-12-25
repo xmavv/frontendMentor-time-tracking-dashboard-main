@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+    margin: 0;padding: 0;box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: $color-very-dark-blue;
+    color: white;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 25rem 80rem;
+    justify-content: center;
+    align-content: center;
+    gap: $gap-medium;
+}

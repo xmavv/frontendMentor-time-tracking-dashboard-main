@@ -1,0 +1,54 @@
+.user {
+    background-color: $color-dark-blue;
+    border-radius: 2rem;
+
+    &__info {
+        background-color: $color-blue;
+        padding: $gap-medium;
+        padding-bottom: 7rem;
+        border-radius: 2rem;
+
+        &-photo {
+            width: 8rem;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: block;
+            margin-bottom: 4rem;
+        }
+
+        &-report {
+            display: block;
+            font-size: 1.2rem;
+            color: $color-pale-blue;
+            margin-bottom: .7rem;
+        }
+
+        &-name {
+            font-size: 4rem;
+            font-weight: 300;
+        }
+    }
+
+    &__action {
+        padding: $gap-medium;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.7rem;
+
+        & > * {
+            padding: 1rem;
+        }
+
+        &-daily {
+
+        }
+
+        &-weekly {
+
+        }
+
+        &-monthly {
+
+        }
+    }
+}

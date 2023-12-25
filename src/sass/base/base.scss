@@ -16,8 +16,12 @@ body {
     color: white;
     height: 100vh;
     display: grid;
-    grid-template-columns: 25rem 80rem;
+    grid-template-columns: 25rem 50%;
     justify-content: center;
     align-content: center;
     gap: $gap-medium;
+
+    @include respond($bp-medium){
+        grid-template-columns: 25rem;
+    }
 }

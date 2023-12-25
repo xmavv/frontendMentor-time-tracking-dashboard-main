@@ -36,19 +36,15 @@
         font-size: 1.7rem;
 
         & > * {
+            cursor: pointer;
+            color: $color-pale-blue;
             padding: 1rem;
         }
 
-        &-daily {
-
-        }
-
-        &-weekly {
-
-        }
-
-        &-monthly {
-
+        &-daily:hover,
+        &-weekly:hover,
+        &-monthly:hover {
+            color: white;
         }
     }
 }

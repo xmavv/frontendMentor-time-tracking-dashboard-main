@@ -16,10 +16,13 @@ body {
   color: white;
   height: 100vh;
   display: grid;
-  grid-template-columns: 25rem 80rem;
+  grid-template-columns: 25rem 50%;
   justify-content: center;
   align-content: center;
   gap: 3rem; }
+  @media only screen and (max-width: 43.75em) {
+    body {
+      grid-template-columns: 25rem; } }
 
 .user {
   background-color: #1c1f4a;
@@ -49,34 +52,67 @@ body {
     flex-direction: column;
     font-size: 1.7rem; }
     .user__action > * {
+      cursor: pointer;
+      color: #bdc1ff;
       padding: 1rem; }
+    .user__action-daily:hover, .user__action-weekly:hover, .user__action-monthly:hover {
+      color: white; }
 
 .details {
   background-color: transparent; }
   .details__list {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem; }
   .details__item {
-    background-color: #1c1f4a;
     position: relative;
     display: flex;
     flex-direction: column-reverse;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    border-radius: 2rem; }
+    .details__item--work {
+      background-color: #ff8c66; }
+    .details__item--play {
+      background-color: #56c2e6; }
+    .details__item--study {
+      background-color: #ff5c7c; }
+    .details__item--exercise {
+      background-color: #4acf81; }
+    .details__item--social {
+      background-color: #7536d3; }
+    .details__item--self-care {
+      background-color: #f1c65b; }
     .details__item-info {
+      margin-top: -3rem;
+      background-color: #1c1f4a;
       padding: 3rem;
       display: grid;
-      grid-template-columns: max-content 1fr;
+      grid-template-columns: max-content max-content;
       justify-content: space-between;
-      grid-row-gap: .8rem; }
+      grid-row-gap: 1.2rem;
+      border-radius: 1.9rem;
+      z-index: 2;
+      cursor: pointer; }
+    .details__item-info:hover {
+      background-color: #252a65; }
+    .details__item-more {
+      cursor: pointer; }
     .details__item-action {
+      font-size: 1.7rem;
       margin-bottom: 1rem; }
     .details__item-hours {
-      grid-column: 1 / -1;
       font-size: 5rem;
       font-weight: 300; }
     .details__item-last {
+      grid-column: 1 / -1;
       font-size: 1.3rem;
       color: #bdc1ff; }
     .details__item-bg {
-      background-color: #ff8c66; }
+      overflow: hidden;
+      display: flex;
+      justify-content: end;
+      padding-right: 2rem; }
+    .details__item-img {
+      transform: translateY(-0.7rem);
+      z-index: 1; }

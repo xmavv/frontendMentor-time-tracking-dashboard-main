@@ -4,51 +4,92 @@
     &__list {
         list-style: none;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: $gap-medium;
     }
 
     &__item {
-        background-color: $color-dark-blue;
+        &--work {
+            background-color: $color-work;
+        }
+
+        &--play {
+            background-color: $color-play;
+        }
+
+        &--study {
+            background-color: $color-study;
+        }
+
+        &--exercise {
+            background-color: $color-exercise;
+        }
+
+        &--social {
+            background-color: $color-social;
+        }
+
+        &--self-care {
+            background-color: $color-self-care;
+        }
+
         position: relative;
         display: flex;
         flex-direction: column-reverse;
         font-size: 1.5rem;
-
-
-
-
-
-        // width: 20rem;
-
+        border-radius: 2rem;
+        
         &-info {
+            margin-top: -3rem;
+
+            background-color: $color-dark-blue;
             padding: $gap-medium;
+
             display: grid;
-            grid-template-columns: max-content 1fr;
+            grid-template-columns: max-content max-content;
             justify-content: space-between;
-            grid-row-gap: .8rem;
+            grid-row-gap: 1.2rem;
+
+            border-radius: 1.9rem;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        &-info:hover {
+            background-color: lighten($color: $color-dark-blue, $amount: 7);
+        }
+
+        &-more {
+            cursor: pointer;
+            //fill: white; not working
         }
 
         &-action {
+            font-size: 1.7rem;
             margin-bottom: 1rem;
         }
 
         &-hours {
-            grid-column: 1 / -1;
             font-size: 5rem;
             font-weight: 300;
         }
 
         &-last {
+            grid-column: 1 / -1;
             font-size: 1.3rem;
             color: $color-pale-blue;
         }
 
         &-bg {
-            background-color: $color-work;
+            overflow: hidden;
+            display: flex;
+            justify-content: end;
+            padding-right: 2rem;
         }
 
         &-img {
-
+            transform: translateY(-.7rem);
+            z-index: 1;
         }
     }
 }

@@ -122,13 +122,17 @@ const dataJson = [
 
 function renderItems(time){
   const list = document.querySelector('.details__list');
+  let last;
+  if(time === "daily") last ="day";
+  if(time === "weekly") last ="week";
+  if(time === "monthly") last ="month";
   list.innerHTML = dataJson.map(action => {
       return `<li class="details__item details__item--${action["title"]}" id="${action["title"]}">
                               <div class="details__item-info">
                                   <p class="details__item-action">${action["title"][0].toUpperCase() + action["title"].substring(1)}</p>
                                   <img src="./../images/icon-ellipsis.svg" alt="" class="details__item-more">
                                   <h2 class="details__item-hours">${action["timeframes"][time]["current"]}hrs</h2>
-                                  <span class="details__item-last">Last week - ${action["timeframes"][time]["previous"]}hrs</span>
+                                  <span class="details__item-last">Last ${last} - ${action["timeframes"][time]["previous"]}hrs</span>
                               </div>
 
                               <div class="details__item-bg">

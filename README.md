@@ -14,6 +14,16 @@ flex-direction: column-reverse;
 
 it was unnecessary then to move smth around smth, just clen order :D
 
+
+
+
+i had a little problem with height on body, at the beggining i wanted to have
+height: 100vh;
+to center my items vertically
+but then when screen shrinks, grid items responsively shrink to 1column, and i didnt see
+whole page, but only the end, it was because of height: 100vh, and i did not know how to 
+deal with it
+
 # Frontend Mentor - Time tracking dashboard
 
 ![Design preview for the Time tracking dashboard coding challenge](./design/desktop-preview.jpg)

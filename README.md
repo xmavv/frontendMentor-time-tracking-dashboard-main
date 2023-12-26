@@ -24,6 +24,24 @@ but then when screen shrinks, grid items responsively shrink to 1column, and i d
 whole page, but only the end, it was because of height: 100vh, and i did not know how to 
 deal with it
 
+
+while hovering the "more icon" i could not change it fill in css: 
+        &-more {
+            cursor: pointer;
+            fill: white;
+
+            @include respond($bp-medium) {
+                justify-self: end;
+            }
+        }
+
+idk why it was quite confusing
+
+so i just did it by javascript, while mouseenter i just change the img
+this isn't perfect cause i have a function inside function and i had to do this like this
+cause when i render the li elements i cannot add eventListeners outsite that function
+not quite optimal but...
+
 # Frontend Mentor - Time tracking dashboard
 
 ![Design preview for the Time tracking dashboard coding challenge](./design/desktop-preview.jpg)

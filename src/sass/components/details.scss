@@ -76,8 +76,8 @@
         }
 
         &-more {
+            padding: .3rem;
             cursor: pointer;
-            // fill: white; // not working ;/
 
             @include respond($bp-medium) {
                 justify-self: end;

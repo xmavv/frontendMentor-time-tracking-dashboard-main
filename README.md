@@ -7,7 +7,7 @@ This is a solution to the [Interactive card details form challenge on Frontend M
 ## Table of contents
 
 - [Overview](#overview)
-    -[The challenge](#the-challenge)
+    - [The challenge](#the-challenge)
 - [My process](#my-process)
     - [Build with](#built-with)
     - [What I learned](#what-i-learned)

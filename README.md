@@ -1,3 +1,19 @@
+I REALLY LIKED THE BEHAVIOUR THAT I'D DECIDED TO CHOOSE WHILE CREATING CARD, AN LI ITEM
+
+firstly i created an whole div to remain two things:
+background div and info div
+
+i thought it would not be so clean to firstly place bg, and then info div, cause then i would have to
+move it down absolutely to the card
+
+so in the hmtl markup i first put the info div, and then bg
+
+but to be the same as on the design i just flipped the order using flexbox
+d:f;
+flex-direction: column-reverse;
+
+it was unnecessary then to move smth around smth, just clen order :D
+
 # Frontend Mentor - Time tracking dashboard
 
 ![Design preview for the Time tracking dashboard coding challenge](./design/desktop-preview.jpg)

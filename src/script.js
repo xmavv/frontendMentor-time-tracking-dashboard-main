@@ -18,13 +18,13 @@ async function renderItems(time){
       return `<li class="details__item details__item--${action["title"]}" id="${action["title"]}">
                               <div class="details__item-info">
                                   <p class="details__item-action">${action["title"][0].toUpperCase() + action["title"].substring(1).replace('-', ' ')}</p>
-                                  <img src="./../images/icon-ellipsis.svg" alt="" class="details__item-more">
+                                  <img src="./images/icon-ellipsis.svg" alt="" class="details__item-more">
                                   <h2 class="details__item-hours">${action["timeframes"][time]["current"]}hrs</h2>
                                   <span class="details__item-last">Last ${last} - ${action["timeframes"][time]["previous"]}hrs</span>
                               </div>
 
                               <div class="details__item-bg">
-                                  <img src="./../images/icon-${action["title"]}.svg" alt="" class="details__item-img">
+                                  <img src="./images/icon-${action["title"]}.svg" alt="" class="details__item-img">
                               </div>
                           </li>`;
   }).join('');
@@ -44,8 +44,8 @@ function showInfo(){
 
 function changeIcon(){
   this.src.includes('white') ? 
-  this.src = "./../images/icon-ellipsis.svg" : 
-  this.src = "./../images/icon-ellipsis-white.svg";
+  this.src = "./images/icon-ellipsis.svg" : 
+  this.src = "./images/icon-ellipsis-white.svg";
 }
 
 renderItems("daily");

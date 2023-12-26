@@ -8,20 +8,29 @@ html {
     box-sizing: border-box;
     font-size: 62.5%;
     scroll-behavior: smooth;
+
+    @include respond($bp-medium){
+        font-size: 50%;
+    } @include respond($bp-small) {
+        font-size: 40%;
+    }
 }
 
 body {
     font-family: 'Rubik', sans-serif;
     background-color: $color-very-dark-blue;
     color: white;
-    height: 100vh;
     display: grid;
     grid-template-columns: 25rem 50%;
     justify-content: center;
     align-content: center;
+    align-items: start; // caly prawy grid jest dzieckiem naszego body, a wiec ai:c ustawia ten pojedynczy item wewnatrz jego containera
+                        // ktory zostal ustalony przez wysokosc pierwszego dziecka "user"
     gap: $gap-medium;
+    padding: 10rem $gap-medium;
 
     @include respond($bp-medium){
-        grid-template-columns: 25rem;
+        grid-template-columns: 80%;
+        padding: 7rem $gap-medium;
     }
 }

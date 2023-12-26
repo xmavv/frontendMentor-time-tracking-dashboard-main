@@ -8,12 +8,20 @@
         padding-bottom: 7rem;
         border-radius: 2rem;
 
+        @include respond($bp-medium){
+            padding: $gap-medium;
+        }
+
         &-photo {
             width: 8rem;
             border: 2px solid white;
             border-radius: 50%;
             display: block;
             margin-bottom: 4rem;
+
+            @include respond($bp-medium){
+                margin-bottom: 0;
+            }
         }
 
         &-report {
@@ -21,11 +29,26 @@
             font-size: 1.2rem;
             color: $color-pale-blue;
             margin-bottom: .7rem;
+
+            @include respond($bp-medium){
+                font-size: 2rem;
+            }
         }
 
         &-name {
             font-size: 4rem;
             font-weight: 300;
+
+            @include respond($bp-medium){
+                font-size: 3rem;
+            }
+        }
+
+        @include respond($bp-medium){
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 2rem;
         }
     }
 
@@ -46,5 +69,16 @@
         &-monthly:hover {
             color: white;
         }
+
+        @include respond($bp-medium){
+            padding: 2rem $gap-medium;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 2rem;
+        }
     }
+}
+
+.active {
+    color: white;
 }

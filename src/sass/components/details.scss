@@ -1,14 +1,24 @@
 .details {
     background-color: transparent;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 
     &__list {
         list-style: none;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        // seems like we cant set the "max" number of columns
         gap: $gap-medium;
+        
+        @include respond($bp-medium) {
+            grid-template-columns: minmax(25rem, 1fr);
+        }
     }
-
+    
     &__item {
+        background-color: white;
+
         &--work {
             background-color: $color-work;
         }
@@ -38,9 +48,11 @@
         flex-direction: column-reverse;
         font-size: 1.5rem;
         border-radius: 2rem;
+        border-bottom-left-radius: 5rem;
+        border-bottom-right-radius: 5rem;
         
         &-info {
-            margin-top: -3rem;
+            margin-top: -5rem;
 
             background-color: $color-dark-blue;
             padding: $gap-medium;
@@ -48,11 +60,15 @@
             display: grid;
             grid-template-columns: max-content max-content;
             justify-content: space-between;
-            grid-row-gap: 1.2rem;
+            grid-row-gap: 1.3rem;
 
-            border-radius: 1.9rem;
+            border-radius: 2rem;
             z-index: 2;
             cursor: pointer;
+
+            @include respond($bp-medium) {
+                align-items: center;
+            }
         }
 
         &-info:hover {
@@ -61,33 +77,54 @@
 
         &-more {
             cursor: pointer;
-            //fill: white; not working
+            // fill: white; // not working ;/
+
+            @include respond($bp-medium) {
+                justify-self: end;
+            }
         }
 
         &-action {
             font-size: 1.7rem;
+            font-weight: 500;
             margin-bottom: 1rem;
+
+            @include respond($bp-medium){
+                font-size: 2rem;
+            }
         }
 
         &-hours {
             font-size: 5rem;
             font-weight: 300;
+
+            @include respond($bp-medium){
+                font-size: 4rem;
+            }
         }
 
         &-last {
             grid-column: 1 / -1;
             font-size: 1.3rem;
             color: $color-pale-blue;
+
+            @include respond($bp-medium){
+                font-size: 1.8rem;
+                grid-column: auto;
+            }
         }
 
         &-bg {
             overflow: hidden;
+            padding-right: 2rem;
             display: flex;
             justify-content: end;
-            padding-right: 2rem;
+            align-items: start;
+            height: 10rem;
         }
 
         &-img {
+            right: 0;
             transform: translateY(-.7rem);
             z-index: 1;
         }

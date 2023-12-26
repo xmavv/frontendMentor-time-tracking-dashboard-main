@@ -1,3 +1,5 @@
+TUTAJ BEDZIE MOJA WIZJA TE KAFELKI BEDA W TAKI SCHODKOWY PATTERN ZROBIONY JESZCZE NIE WIEM JAK ;P
+
 # Frontend Mentor - Time tracking dashboard
 
 ![Design preview for the Time tracking dashboard coding challenge](./design/desktop-preview.jpg)

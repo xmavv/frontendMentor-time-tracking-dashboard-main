@@ -1,0 +1,12 @@
+przeciagajac te kafelki mozna ustalic sobie samemu pozycje ich :O
+
+zrobiles to na beforze i checkbox hacku
+ale zrob teraz normalnie ze na listenerze tej ikonki, pojawia sie span ktorego
+pozycja jest zalezna od akurat tego elementu icon-more
+i tam w srodku tego spana bedzie
+
+Change background color i bedzie mozna se zmienic normalnie za pomoca inputu color
+i to zrobisz jak szef
+
+bo w ten sposob to ciezko operowac na tym elemencie before i nie mozna z t7ym
+nic zrobic

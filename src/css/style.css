@@ -181,3 +181,41 @@ body {
       right: 0;
       transform: translateY(-0.7rem);
       z-index: 1; }
+
+input {
+  display: none; }
+
+label {
+  position: relative;
+  justify-self: end; }
+
+label::before {
+  content: "Change background color";
+  line-height: 2;
+  position: absolute;
+  top: 2.5rem;
+  right: 2rem;
+  width: 20rem;
+  height: 11rem;
+  border-radius: 1.5rem;
+  border-top-right-radius: 0;
+  background-color: #5847eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity .1s ease-in-out, scale .1s ease-in-out;
+  transform-origin: top right;
+  filter: blur(1px);
+  opacity: 0;
+  scale: 0; }
+  @media only screen and (max-width: 43.75em) {
+    label::before {
+      font-size: 1.8rem;
+      width: 20rem;
+      height: 15rem; } }
+
+input:checked ~ label::before {
+  filter: blur(0);
+  opacity: 1;
+  scale: 1; }

@@ -43,7 +43,6 @@
             background-color: $color-self-care;
         }
 
-        position: relative;
         display: flex;
         flex-direction: column-reverse;
         font-size: 1.5rem;
@@ -53,6 +52,7 @@
         
         &-info {
             margin-top: -5rem;
+            position: relative;
 
             background-color: $color-dark-blue;
             padding: $gap-medium;
@@ -131,50 +131,51 @@
     }
 }
 
-input {
-    display: none;
-}
+.settings {
+    position: absolute;
+    top: 17%;
+    right: 22%;
+    width: 20rem;
+    height: 10rem;
+    border-radius: 1.5rem;
+    border-top-right-radius: 0;
+    background-color: $color-blue;
+    font-size: 1.3rem;
 
-label {
-    position: relative;
-    justify-self: end;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-label {
-    &::before {
-        content: "Change background color";
-        line-height: 2;
+    transition: opacity .1s ease-in-out, scale .1s ease-in-out;
+    transform-origin: top right;
 
-        position: absolute;
-        top: 2.5rem;
-        right: 2rem;
-        width: 20rem;
-        height: 11rem;
-        border-radius: 1.5rem;
-        border-top-right-radius: 0;
-        background-color: $color-blue;
+    filter: blur(1px);
+    opacity: 0;
+    scale: 0;
 
+    z-index: 100;
+
+    @include respond($bp-medium){
+        font-size: 1.8rem;
+        height: 15rem;
+    }
+
+    &__background-color {
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
-
-        transition: opacity .1s ease-in-out, scale .1s ease-in-out;
-        transform-origin: top right;
-
-        filter: blur(1px);
-        opacity: 0;
-        scale: 0;
-
-        @include respond($bp-medium){
-            font-size: 1.8rem;
-            width: 20rem;
-            height: 15rem;
+        align-items: center;
+        
+        input {
+            margin: .5rem;
+            width: 2rem;
+            height: 2rem;
+            border: none;
+            outline: none;
         }
     }
 }
 
-input:checked ~ label::before {
+.settings.animate {
     filter: blur(0);
     opacity: 1;
     scale: 1;

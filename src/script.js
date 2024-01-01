@@ -18,8 +18,10 @@ async function renderItems(time){
       return `<li class="details__item details__item--${action["title"]}" id="${action["title"]}">
                   <div class="details__item-info">
                       <p class="details__item-action">${action["title"][0].toUpperCase() + action["title"].substring(1).replace('-', ' ')}</p>
-                      <input type="checkbox" id="icon${action["title"]}"></input>
-                      <label for="icon${action["title"]}"><img src="./images/icon-ellipsis.svg" alt="" class="details__item-more"></label>
+                      <img src="./images/icon-ellipsis.svg" alt="" class="details__item-more">
+                      <div class="settings">
+                        <span class="settings__background-color">Change background color <input type="color"></span>
+                      </div>
                       <h2 class="details__item-hours">${action["timeframes"][time]["current"]}hrs</h2>
                       <span class="details__item-last">Last ${last} - ${action["timeframes"][time]["previous"]}hrs</span>
                   </div>
@@ -31,16 +33,19 @@ async function renderItems(time){
   }).join('');
 
   const moreIcons = document.querySelectorAll('.details__item-more');
+  const settings = document.querySelector('.settings');
   moreIcons.forEach(icon => {
     icon.addEventListener('mouseenter', changeIcon);
     icon.addEventListener('mouseleave', changeIcon);
+    icon.addEventListener('click', showSettings);
   });
 
-  const inputs = document.querySelectorAll('input');
-  console.log(inputs);
-  inputs.forEach(input => input.addEventListener('click', function() {
-    console.log(this.checked);
-  }));
+  function showSettings(e){
+    const setting = this.parentNode.querySelector('.settings');
+    const colorInput = setting.children[0];
+    const bg = setting.parentNode.parentNode;
+    setting.classList.toggle('animate');
+  };
 }
 
 function showInfo(){

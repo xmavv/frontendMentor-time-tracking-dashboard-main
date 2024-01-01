@@ -17,6 +17,7 @@ html {
       font-size: 40%; } }
 
 body {
+  position: relative;
   font-family: 'Rubik', sans-serif;
   background-color: #0f1424;
   color: white;
@@ -108,7 +109,6 @@ body {
         grid-template-columns: minmax(25rem, 1fr); } }
   .details__item {
     background-color: white;
-    position: relative;
     display: flex;
     flex-direction: column-reverse;
     font-size: 1.5rem;
@@ -129,6 +129,7 @@ body {
       background-color: #f1c65b; }
     .details__item-info {
       margin-top: -5rem;
+      position: relative;
       background-color: #1c1f4a;
       padding: 3rem;
       display: grid;
@@ -182,40 +183,41 @@ body {
       transform: translateY(-0.7rem);
       z-index: 1; }
 
-input {
-  display: none; }
-
-label {
-  position: relative;
-  justify-self: end; }
-
-label::before {
-  content: "Change background color";
-  line-height: 2;
+.settings {
   position: absolute;
-  top: 2.5rem;
-  right: 2rem;
+  top: 17%;
+  right: 22%;
   width: 20rem;
-  height: 11rem;
+  height: 10rem;
   border-radius: 1.5rem;
   border-top-right-radius: 0;
   background-color: #5847eb;
+  font-size: 1.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   transition: opacity .1s ease-in-out, scale .1s ease-in-out;
   transform-origin: top right;
   filter: blur(1px);
   opacity: 0;
-  scale: 0; }
+  scale: 0;
+  z-index: 100; }
   @media only screen and (max-width: 43.75em) {
-    label::before {
+    .settings {
       font-size: 1.8rem;
-      width: 20rem;
       height: 15rem; } }
+  .settings__background-color {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .settings__background-color input {
+      margin: .5rem;
+      width: 2rem;
+      height: 2rem;
+      border: none;
+      outline: none; }
 
-input:checked ~ label::before {
+.settings.animate {
   filter: blur(0);
   opacity: 1;
   scale: 1; }

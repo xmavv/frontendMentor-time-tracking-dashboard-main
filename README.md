@@ -92,6 +92,8 @@ this isn't perfect cause i have a function inside function and i had to do this 
 cause when i render the li elements i cannot add eventListeners outsite that function
 not quite optimal but...
 
+the same with the svgs in the background of each list item, i wanted to make them be dynamically changed as the bgColor, but fill cannot be set in css properties idk why
+
 ## Author
 
 - my github profile - [xmavv](https://github.com/xmavv)

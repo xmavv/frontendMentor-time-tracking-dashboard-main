@@ -1,3 +1,5 @@
+"use strict"
+
 const url = "./data.json"
 
 async function getData(){
@@ -21,6 +23,7 @@ async function renderItems(time){
                       <img src="./images/icon-ellipsis.svg" alt="" class="details__item-more">
                       <div class="settings">
                         <span class="settings__background-color">Change background color <input type="color"></span>
+                        <span class="settings__reset">RESET</span>
                       </div>
                       <h2 class="details__item-hours">${action["timeframes"][time]["current"]}hrs</h2>
                       <span class="details__item-last">Last ${last} - ${action["timeframes"][time]["previous"]}hrs</span>
@@ -33,25 +36,52 @@ async function renderItems(time){
   }).join('');
 
   const moreIcons = document.querySelectorAll('.details__item-more');
-  const settings = document.querySelector('.settings');
+  const inputs = document.querySelectorAll('input');
+  const items = document.querySelectorAll('.details__item');
+  const resets = document.querySelectorAll('.settings__reset');
+
   moreIcons.forEach(icon => {
     icon.addEventListener('mouseenter', changeIcon);
     icon.addEventListener('mouseleave', changeIcon);
     icon.addEventListener('click', showSettings);
   });
 
-  function showSettings(e){
+  inputs.forEach(input => input.addEventListener('change', changeBgcolor));
+
+  function showSettings(){
     const setting = this.parentNode.querySelector('.settings');
-    const colorInput = setting.children[0];
-    const bg = setting.parentNode.parentNode;
     setting.classList.toggle('animate');
   };
+
+  items.forEach(item => setBgcolor(item));
+  resets.forEach(reset => reset.addEventListener('click', setReset));
+}
+
+function setBgcolor(item){
+  const color = localStorage.getItem(item.id);
+  item.style.backgroundColor = color;
+}
+
+function changeBgcolor(){
+  const item = this.parentNode.parentNode.parentNode.parentNode;
+  setLocalstorageInfo(item.id, this.value);
+  item.style.backgroundColor = this.value;
+}
+
+function setLocalstorageInfo(name, color){
+  localStorage.setItem(name, color); //musi byc normalna funkcja bo funkcja strzalkowa zmienia kontekst this
 }
 
 function showInfo(){
   renderItems(this.dataset.name);
   userAction.forEach(action => action.classList.remove('active'));
   this.classList.add('active');
+}
+
+function setReset(){
+  const item = this.parentNode.parentNode.parentNode;
+  setLocalstorageInfo(item.id, `var(--color-${item.id})`);
+  item.style.backgroundColor = `var(--color-${item.id})`;
 }
 
 function changeIcon(){

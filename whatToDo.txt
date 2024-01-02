@@ -10,3 +10,6 @@ i to zrobisz jak szef
 
 bo w ten sposob to ciezko operowac na tym elemencie before i nie mozna z t7ym
 nic zrobic
+
+na poczatku kolor ma byc taki jak jest
+do localstrogge color bgc

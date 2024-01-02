@@ -19,28 +19,35 @@
     &__item {
         background-color: white;
 
+        --color-work: hsl(15, 100%, 70%);
+        --color-play: hsl(195, 74%, 62%);
+        --color-study: hsl(348, 100%, 68%);
+        --color-exercise: hsl(145, 58%, 55%);
+        --color-social: hsl(264, 64%, 52%);
+        --color-self-care: hsl(43, 84%, 65%);
+
         &--work {
-            background-color: $color-work;
+            background-color: var(--color-work);
         }
 
         &--play {
-            background-color: $color-play;
+            background-color: var(--color-play);
         }
 
         &--study {
-            background-color: $color-study;
+            background-color: var(--color-study);
         }
 
         &--exercise {
-            background-color: $color-exercise;
+            background-color: var(--color-exercise);
         }
 
         &--social {
-            background-color: $color-social;
+            background-color: var(--color-social);
         }
 
         &--self-care {
-            background-color: $color-self-care;
+            background-color: var(--color-self-care);
         }
 
         display: flex;
@@ -64,7 +71,6 @@
 
             border-radius: 2rem;
             z-index: 2;
-            cursor: pointer;
 
             @include respond($bp-medium) {
                 align-items: center;
@@ -123,7 +129,7 @@
             height: 10rem;
         }
 
-        &-img {
+        &-img{
             right: 0;
             transform: translateY(-.7rem);
             z-index: 1;
@@ -143,6 +149,7 @@
     font-size: 1.3rem;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -164,6 +171,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: .7rem;
         
         input {
             margin: .5rem;
@@ -172,6 +180,13 @@
             border: none;
             outline: none;
         }
+    }
+
+    &__reset {
+        padding: .5rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        background-color: rgb(186, 40, 40);
     }
 }
 

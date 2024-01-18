@@ -1,0 +1,56 @@
+.popup {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  font-size: 4rem;
+  transform: translateY(-15%);
+  backdrop-filter: blur(1rem);
+  z-index: 10000;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    span {
+      cursor: pointer;
+    }
+
+    input {
+      font-size: 2rem;
+      padding: 1rem;
+      border-radius: 2rem;
+      border: none;
+    }
+
+    input:focus,
+    input:active {
+      outline: none;
+      border: none;
+    }
+
+    button {
+      padding: 1.5rem;
+      border-radius: 2rem;
+      color: inherit;
+      outline: none;
+      border: none;
+      font-size: 2.5rem;
+      background-color: $color-play;
+      line-height: 0.7;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: darken($color-play, 10%);
+    }
+  }
+}
+
+.d-none {
+  display: none;
+}

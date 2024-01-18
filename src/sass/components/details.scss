@@ -1,197 +1,197 @@
 .details {
-    background-color: transparent;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+  background-color: transparent;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 
-    &__list {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-        // seems like we cant set the "max" number of columns
-        gap: $gap-medium;
-        
-        @include respond($bp-medium) {
-            grid-template-columns: minmax(25rem, 1fr);
-        }
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    // seems like we cant set the "max" number of columns
+    gap: $gap-medium;
+
+    @include respond($bp-medium) {
+      grid-template-columns: minmax(25rem, 1fr);
     }
-    
-    &__item {
-        background-color: white;
+  }
 
-        --color-work: hsl(15, 100%, 70%);
-        --color-play: hsl(195, 74%, 62%);
-        --color-study: hsl(348, 100%, 68%);
-        --color-exercise: hsl(145, 58%, 55%);
-        --color-social: hsl(264, 64%, 52%);
-        --color-self-care: hsl(43, 84%, 65%);
+  &__item {
+    background-color: white;
 
-        &--work {
-            background-color: var(--color-work);
-        }
+    --color-work: hsl(15, 100%, 70%);
+    --color-play: hsl(195, 74%, 62%);
+    --color-study: hsl(348, 100%, 68%);
+    --color-exercise: hsl(145, 58%, 55%);
+    --color-social: hsl(264, 64%, 52%);
+    --color-self-care: hsl(43, 84%, 65%);
 
-        &--play {
-            background-color: var(--color-play);
-        }
-
-        &--study {
-            background-color: var(--color-study);
-        }
-
-        &--exercise {
-            background-color: var(--color-exercise);
-        }
-
-        &--social {
-            background-color: var(--color-social);
-        }
-
-        &--self-care {
-            background-color: var(--color-self-care);
-        }
-
-        display: flex;
-        flex-direction: column-reverse;
-        font-size: 1.5rem;
-        border-radius: 2rem;
-        border-bottom-left-radius: 5rem;
-        border-bottom-right-radius: 5rem;
-        
-        &-info {
-            margin-top: -5rem;
-            position: relative;
-
-            background-color: $color-dark-blue;
-            padding: $gap-medium;
-
-            display: grid;
-            grid-template-columns: max-content max-content;
-            justify-content: space-between;
-            grid-row-gap: 1.3rem;
-
-            border-radius: 2rem;
-            z-index: 2;
-
-            @include respond($bp-medium) {
-                align-items: center;
-            }
-        }
-
-        &-info:hover {
-            background-color: lighten($color: $color-dark-blue, $amount: 7);
-        }
-
-        &-more {
-            padding: .3rem;
-            cursor: pointer;
-
-            @include respond($bp-medium) {
-                justify-self: end;
-            }
-        }
-
-        &-action {
-            font-size: 1.7rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-
-            @include respond($bp-medium){
-                font-size: 2rem;
-            }
-        }
-
-        &-hours {
-            font-size: 5rem;
-            font-weight: 300;
-
-            @include respond($bp-medium){
-                font-size: 4rem;
-            }
-        }
-
-        &-last {
-            grid-column: 1 / -1;
-            font-size: 1.3rem;
-            color: $color-pale-blue;
-
-            @include respond($bp-medium){
-                font-size: 1.8rem;
-                grid-column: auto;
-            }
-        }
-
-        &-bg {
-            overflow: hidden;
-            padding-right: 2rem;
-            display: flex;
-            justify-content: end;
-            align-items: start;
-            height: 10rem;
-        }
-
-        &-img{
-            right: 0;
-            transform: translateY(-.7rem);
-            z-index: 1;
-        }
+    &--work {
+      background-color: var(--color-work);
     }
+
+    &--play {
+      background-color: var(--color-play);
+    }
+
+    &--study {
+      background-color: var(--color-study);
+    }
+
+    &--exercise {
+      background-color: var(--color-exercise);
+    }
+
+    &--social {
+      background-color: var(--color-social);
+    }
+
+    &--self-care {
+      background-color: var(--color-self-care);
+    }
+
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+
+    &-info {
+      margin-top: -5rem;
+      position: relative;
+
+      background-color: $color-dark-blue;
+      padding: $gap-medium;
+
+      display: grid;
+      grid-template-columns: max-content max-content;
+      justify-content: space-between;
+      grid-row-gap: 1.3rem;
+
+      border-radius: 2rem;
+      z-index: 2;
+
+      @include respond($bp-medium) {
+        align-items: center;
+      }
+    }
+
+    &-info:hover {
+      background-color: lighten($color: $color-dark-blue, $amount: 7);
+    }
+
+    &-more {
+      padding: 0.3rem;
+      cursor: pointer;
+
+      @include respond($bp-medium) {
+        justify-self: end;
+      }
+    }
+
+    &-action {
+      font-size: 1.7rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+
+      @include respond($bp-medium) {
+        font-size: 2rem;
+      }
+    }
+
+    &-hours {
+      font-size: 5rem;
+      font-weight: 300;
+
+      @include respond($bp-medium) {
+        font-size: 4rem;
+      }
+    }
+
+    &-last {
+      grid-column: 1 / -1;
+      font-size: 1.3rem;
+      color: $color-pale-blue;
+
+      @include respond($bp-medium) {
+        font-size: 1.8rem;
+        grid-column: auto;
+      }
+    }
+
+    &-bg {
+      overflow: hidden;
+      padding-right: 2rem;
+      display: flex;
+      justify-content: end;
+      align-items: start;
+      height: 10rem;
+    }
+
+    &-img {
+      right: 0;
+      transform: translateY(-0.7rem);
+      z-index: 1;
+    }
+  }
 }
 
 .settings {
-    position: absolute;
-    top: 17%;
-    right: 22%;
-    width: 20rem;
-    height: 10rem;
-    border-radius: 1.5rem;
-    border-top-right-radius: 0;
-    background-color: $color-blue;
-    font-size: 1.3rem;
+  position: absolute;
+  top: 17%;
+  right: 22%;
+  width: 20rem;
+  height: 10rem;
+  border-radius: 1.5rem;
+  border-top-right-radius: 0;
+  background-color: $color-blue;
+  font-size: 1.3rem;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: opacity 0.1s ease-in-out, scale 0.1s ease-in-out;
+  transform-origin: top right;
+
+  filter: blur(1px);
+  opacity: 0;
+  scale: 0;
+
+  z-index: 100;
+
+  @include respond($bp-medium) {
+    font-size: 1.8rem;
+    height: 15rem;
+  }
+
+  &__background-color {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    margin: 0.7rem;
 
-    transition: opacity .1s ease-in-out, scale .1s ease-in-out;
-    transform-origin: top right;
-
-    filter: blur(1px);
-    opacity: 0;
-    scale: 0;
-
-    z-index: 100;
-
-    @include respond($bp-medium){
-        font-size: 1.8rem;
-        height: 15rem;
+    input {
+      margin: 0.5rem;
+      width: 2rem;
+      height: 2rem;
+      border: none;
+      outline: none;
     }
+  }
 
-    &__background-color {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: .7rem;
-        
-        input {
-            margin: .5rem;
-            width: 2rem;
-            height: 2rem;
-            border: none;
-            outline: none;
-        }
-    }
-
-    &__reset {
-        padding: .5rem;
-        border-radius: 1rem;
-        cursor: pointer;
-        background-color: rgb(186, 40, 40);
-    }
+  &__reset {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: rgb(186, 40, 40);
+  }
 }
 
 .settings.animate {
-    filter: blur(0);
-    opacity: 1;
-    scale: 1;
+  filter: blur(0);
+  opacity: 1;
+  scale: 1;
 }
